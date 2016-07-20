@@ -5,12 +5,16 @@
   var $TIMELINE = $('#timeline');
   var $FORM = $('#form');
   var $URL = $('#url');
+  var $SPINNER = $('#spinner');
 
   function onSubmit(event) {
-    $TIMELINE.hide();
-    $TIMELINE.html('');
+
     var url = $URL.val();
     if (url !== '') {
+      $TIMELINE.hide();
+      $TIMELINE.html('');
+      $SPINNER.show();
+      
       $.ajax({
         dataType: "json",
         url: CHECKER_SERVICE,
@@ -27,7 +31,7 @@
     var html = '';
     for (var i=0; i<data.length; i++) {
       html += '';
-      if (data[i].code === '200') {
+      if (data[i].code === 200) {
         html += '<li class="timeline-inverted"><div class="timeline-badge success">' +
           '<i class="glyphicon glyphicon-ok"></i>';
       } else if (data[i].code <= 400 && data[i].code >= 300) {
@@ -47,6 +51,8 @@
       }
       html += '</p></div></div></li>';
     }
+
+    $SPINNER.hide();
     $TIMELINE.html(html);
     $TIMELINE.show();
   }
