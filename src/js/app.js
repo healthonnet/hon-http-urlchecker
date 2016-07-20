@@ -6,6 +6,7 @@
   var $FORM = $('#form');
   var $URL = $('#url');
   var $SPINNER = $('#spinner');
+  var $ERRORMSG = $('#errorMessage');
 
   function onSubmit(event) {
 
@@ -14,7 +15,8 @@
       $TIMELINE.hide();
       $TIMELINE.html('');
       $SPINNER.show();
-      
+      $ERRORMSG.hide();
+
       $.ajax({
         dataType: "json",
         url: CHECKER_SERVICE,
@@ -22,9 +24,15 @@
           url: url,
         },
         success: onSuccess,
+        error: onError,
       });
     }
     event.preventDefault();
+  }
+
+  function onError(xhr, status, error) {
+    $ERRORMSG.show();
+    $SPINNER.hide();
   }
 
   function onSuccess(data) {
