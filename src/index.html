@@ -13,6 +13,11 @@
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
     crossorigin="anonymous">
   <link rel="stylesheet" href="css/app.css">
+  <script
+    src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous">
+  </script>
 </head>
 
 <body>
@@ -29,10 +34,10 @@
       <p class="lead text-center">
         Check status code, response headers, redirect location and redirect chain of a HTTP connection.
       </p>
-      <form role="form" action="search" method="GET" class="form-inline centered">
+      <form role="form" action="search" method="GET" class="form-inline centered" id="form">
         <div class="form-group">
-          <label for="bigsearch" class="sr-only">Check</label>
-          <input id="bigsearch" type="text" placeholder="http://www.example.com" name="query" class="form-control input-lg">
+          <label for="url" class="sr-only">Check</label>
+          <input id="url" type="text" placeholder="http://www.example.com" name="query" class="form-control input-lg">
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-primary btn-lg">Check</button>
@@ -40,6 +45,12 @@
       </form>
     </div>
   </div>
+
+  <div class="container">
+    <ul id="timeline" class="timeline hidden"></ul>
+  </div>
+
+  <script src="js/app.js"></script>
 </body>
 
 </html>
