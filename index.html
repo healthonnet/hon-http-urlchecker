@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>HON Url Checker</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Check status code, response headers, redirect location and redirect chain of a HTTP connection.">
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/app.css">
+  <script
+    src="https://code.jquery.com/jquery-3.1.0.min.js"
+    integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+    crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="../" class="navbar-brand">HON Url Checker</a>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="jumbotron">
+      <h2 class="text-center">HTTP Status</h2>
+      <p class="lead text-center">
+        Check status code, response headers, redirect location and redirect chain of a HTTP connection.
+      </p>
+      <form role="form" action="search" method="GET" class="form-inline centered" id="form">
+        <div class="form-group">
+          <label for="url" class="sr-only">Check</label>
+          <input id="url" type="text" placeholder="http://www.example.com" name="query" class="form-control input-lg">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-lg">Check</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="text-center">
+      <div id="errorMessage" class="alert alert-danger" role="alert" style="display:none">
+        Oh snap! Check your url
+      </div>
+      <span id="spinner" class="glyphicon glyphicon-refresh glyphicon-spin" style="display:none"></span>
+    </div>
+    <ul id="timeline" class="timeline" style="display:none"></ul>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="text-center">Copyright © 2016 Health On the Net
+        <span class="hidden-xs">Foundation - v0.0.1</span>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
