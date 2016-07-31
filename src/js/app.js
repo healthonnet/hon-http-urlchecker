@@ -47,7 +47,7 @@
           '<i class="glyphicon glyphicon-check"></i>';
       } else {
         html += '<li><div class="timeline-badge danger">' +
-          '<i class="glyphicon glyphicon-check"></i>';
+          '<i class="glyphicon glyphicon-remove"></i>';
       }
       html += '</div><div class="timeline-panel">' +
         '<div class="timeline-heading">' +
