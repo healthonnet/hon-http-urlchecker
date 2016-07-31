@@ -1,13 +1,14 @@
 (function($) {
   'use strict';
 
-  var CHECKER_SERVICE = 'https://apikconnect.honservices.org/~kconnect/cgi-bin/url-checker-service.cgi';
+  var CHECKER_SERVICE = 'https://apikconnect.honservices.org/' +
+    '~kconnect/cgi-bin/url-checker-service.cgi';
   var $TIMELINE = $('#timeline');
   var $FORM = $('#form');
   var $URL = $('#url');
   var $SPINNER = $('#spinner');
   var $ERRORMSG = $('#errorMessage');
-  var $FOOTER = $(".footer");
+  var $FOOTER = $('.footer');
 
   function onSubmit(event) {
 
@@ -19,7 +20,7 @@
       $ERRORMSG.hide();
 
       $.ajax({
-        dataType: "json",
+        dataType: 'json',
         url: CHECKER_SERVICE,
         data: {
           url: url,
@@ -39,10 +40,11 @@
 
   function onSuccess(data) {
     var html = '';
-    for (var i=0; i<data.length; i++) {
+    for (var i = 0; i < data.length; i++) {
       html += '';
       if (data[i].code === 200) {
-        html += '<li class="timeline-inverted"><div class="timeline-badge success">' +
+        html += '<li class="timeline-inverted"> ' +
+          '<div class="timeline-badge success">' +
           '<i class="glyphicon glyphicon-ok"></i>';
       } else if (data[i].code <= 400 && data[i].code >= 300) {
         html += '<li><div class="timeline-badge primary">' +
@@ -56,7 +58,7 @@
         '<h4 class="timeline-title">' + data[i].protocol + ' ' +
         data[i].code + ' ' + data[i].message  + '</h4>' +
         '<p class="text-muted">';
-      if (data[i].location){
+      if (data[i].location) {
         html += data[i].location;
       }
       html += '</p></div></div></li>';
@@ -70,19 +72,20 @@
 
   function positionFooter() {
     var footerHeight = $FOOTER.height();
-    var footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+    var footerTop =
+      ($(window).scrollTop() + $(window).height() - footerHeight) + 'px';
 
-    if ( ($(document.body).height()+footerHeight) < $(window).height()) {
-      $FOOTER.css({position: "absolute"});
+    if (($(document.body).height() + footerHeight) < $(window).height()) {
+      $FOOTER.css({position: 'absolute'});
     } else {
-      $FOOTER.css({position: "static"});
+      $FOOTER.css({position: 'static'});
     }
 
   }
 
   $FORM.submit(onSubmit);
 
-  $(window).bind("load", function() {
+  $(window).bind('load', function() {
 
     positionFooter();
 

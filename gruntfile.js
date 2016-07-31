@@ -1,9 +1,9 @@
-module.exports = function(grunt){
+module.exports = function(grunt) {
   'use strict';
 
   require('load-grunt-config')(grunt, {
-    data : {
-      pkg: grunt.file.readJSON('package.json')
-    }
+    data: {
+      pkg: grunt.file.readJSON('package.json'),
+    },
   });
 };
