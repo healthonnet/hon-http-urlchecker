@@ -1,0 +1,20 @@
+{
+  "name": "hon-http-urlchecker",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Check status code, response headers, redirect location and redirect chain of a HTTP(S) connection.",
+  "keywords": [
+    "http",
+    "status code",
+    "redirect",
+    "headers",
+    "connection"
+  ],
+  "author": "William Belle <william.belle@gmail.com>",
+  "license": "MIT",
+  "repository": "https://github.com/healthonnet/hon-http-urlchecker.git",
+  "scripts": {
+  },
+  "devDependencies": {
+  }
+}
