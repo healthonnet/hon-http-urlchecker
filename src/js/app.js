@@ -7,6 +7,7 @@
   var $URL = $('#url');
   var $SPINNER = $('#spinner');
   var $ERRORMSG = $('#errorMessage');
+  var $FOOTER = $(".footer");
 
   function onSubmit(event) {
 
@@ -33,6 +34,7 @@
   function onError(xhr, status, error) {
     $ERRORMSG.show();
     $SPINNER.hide();
+    positionFooter();
   }
 
   function onSuccess(data) {
@@ -63,7 +65,28 @@
     $SPINNER.hide();
     $TIMELINE.html(html);
     $TIMELINE.show();
+    positionFooter();
+  }
+
+  function positionFooter() {
+    var footerHeight = $FOOTER.height();
+    var footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+
+    if ( ($(document.body).height()+footerHeight) < $(window).height()) {
+      $FOOTER.css({position: "absolute"});
+    } else {
+      $FOOTER.css({position: "static"});
+    }
+
   }
 
   $FORM.submit(onSubmit);
+
+  $(window).bind("load", function() {
+
+    positionFooter();
+
+    $(window).scroll(positionFooter).resize(positionFooter);
+  });
+
 })(jQuery);
