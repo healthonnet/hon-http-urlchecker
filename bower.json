@@ -1,0 +1,27 @@
+{
+  "name": "hon-http-urlchecker",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Check status code, response headers, redirect location and redirect chain of a HTTP(S) connection.",
+  "keywords": [
+    "http",
+    "status code",
+    "redirect",
+    "headers",
+    "connection"
+  ],
+  "authors": [
+    "William Belle <william.belle@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7"
+  }
+}
