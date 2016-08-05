@@ -1,4 +1,4 @@
 {
   "preset": "node-style-guide",
-  "excludeFiles": ["node_modules/**", "bower_components/**/*.js"],
+  "excludeFiles": ["node_modules/**", "bower_components/**", "www/**"],
 }
