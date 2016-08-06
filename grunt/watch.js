@@ -4,7 +4,7 @@ module.exports = {
     files: [
       'src/**',
     ],
-    tasks: ['test'],
+    tasks: ['build'],
   },
   options: {
     livereload: true,

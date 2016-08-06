@@ -1,8 +1,16 @@
+build:
+  - 'clean'
+  - 'test'
+  - 'copy:build'
+
 test:
   - 'jshint:all'
   - 'jscs:all'
 
 serve:
- - 'test'
- - 'connect:build'
- - 'watch'
+  - 'build'
+  - 'connect:build'
+  - 'watch'
+
+default:
+  - 'serve'

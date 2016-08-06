@@ -15,6 +15,12 @@ module.exports = {
       nonull: true,
     },{
       expand: true,
+      cwd: 'bower_components/bootstrap/dist/',
+      src: [ 'fonts/**' ],
+      dest: 'www/',
+      nonull: true,
+    },{
+      expand: true,
       cwd: 'bower_components/jquery/dist/',
       src: [ 'jquery.min.js' ],
       dest: 'www/js/',
