@@ -2,6 +2,7 @@ build:
   - 'clean'
   - 'test'
   - 'copy:build'
+  - 'jade:build'
 
 test:
   - 'jshint:all'
