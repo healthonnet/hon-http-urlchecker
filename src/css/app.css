@@ -10,6 +10,10 @@ body {
   text-align: center;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 /*
  * Navbar
  */
@@ -92,6 +96,15 @@ body {
   font-size: 18px;
   font-style: italic;
 }
+
+/*
+ * Status code
+ */
+
+ .status-code dd{
+   margin-left: 20px;
+   text-align: justify;
+ }
 
 /*
  * Timeline

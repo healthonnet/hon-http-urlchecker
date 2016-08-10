@@ -1,0 +1,93 @@
+extends layout
+
+block content
+
+  div.container
+    div.page-header
+      h1 Most common HTTP Status Codes
+    p.lead.text-justify.
+      This is a list of Hypertext Transfer Protocol (HTTP) response 
+      status codes. HTTP response status codes indicate whether a specific HTTP
+      request has been successfully completed. Responses are grouped in five
+      classes: informational responses, successful responses, redirects,
+      client errors, and servers errors.
+    h2 Successful responses (2xx)
+    p.text-justify.
+      This class of status codes indicates the action requested by the client
+      was received, understood, accepted, and processed successfully.
+    dl.status-code
+      dt.text-success 200 OK
+      dd.
+        The request has succeeded. The meaning of a success varies depending on
+        the HTTP method:
+        <br />
+        GET: The resource has been fetched and is transmitted in the message 
+        body.
+        <br />
+        HEAD: The entity headers are in the message body.
+        <br />
+        POST: The resource describing the result of the action is transmitted
+        in the message body.
+        <br />
+        TRACE: The message body contains the request message as received by
+        the server
+    h2 Redirection messages (3xx)
+    p.text-justify.
+      This class of status code indicates the client must take additional
+      action to complete the request. Many of these status codes are used in
+      URL redirection.
+    dl.status-code
+      dt.text-primary 301 Moved Permanently
+      dd.
+        This response code means that URI of requested resource has been
+        changed. Probably, new URI would be given in the response.
+      dt.text-primary 302 Found
+      dd.
+        This response code means that URI of requested resource has been
+        changed temporarily. New changes in the URI might be made in the future.
+        Therefore, this same URI should be used by the client in future
+        requests.
+    h2 Client error responses (4xx)
+    p.text-justify.
+      The 4xx class of status code is intended for situations in which the
+      client seems to have erred. Except when responding to a HEAD request, the
+      server should include an entity containing an explanation of the error
+      situation, and whether it is a temporary or permanent condition. These
+      status codes are applicable to any request method. User agents should
+      display any included entity to the user.
+    dl.status-code
+      dt.text-danger 400 Bad Request
+      dd.
+        This response means that server could not understand the request due to
+        invalid syntax.
+      dt.text-danger 401 Unauthorized
+      dd.
+        Authentication is needed to get requested response. This is similar to
+        403, but in this case, authentication is possible.
+      dt.text-danger 403 Forbidden
+      dd.
+        Client does not have access rights to the content so server is
+        rejecting to give proper response.
+      dt.text-danger 404 Not Found
+      dd.
+        Server can not find requested resource. This response code probably is
+        most famous one due to its frequency to occur in web.
+    h2 Server error responses (5xx)
+    p.text-justify.
+      The server failed to fulfill an apparently valid request.
+    dl.status-code
+      dt.text-danger 500 Internal Server Error
+      dd.
+        The server has encountered a situation it doesn't know how to handle.
+      dt.text-danger 502 Bad Gateway
+      dd.
+        This error response means that the server, while working as a gateway
+        to get a response needed to handle the request, got an invalid response.
+      dt.text-danger 503 Service Unavailable
+      dd.
+        The server is not ready to handle the request. Common causes are a
+        server that is down for maintenance or that is overloaded.
+      dt.text-danger 504 Gateway Timeout
+      dd.
+        This error response is given when the server is acting as a gateway
+        and cannot get a response in time.
