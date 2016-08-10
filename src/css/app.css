@@ -43,12 +43,15 @@ body {
   color: #222;
 }
 
+/*
+ * Footer
+ */
+
 .footer {
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 50px;
-  background-color: #f8f8f8;
+  background-color: #f1f6ff;
   border-top: 1px solid #e7e7e7;
   color: #777;
 }
@@ -57,9 +60,26 @@ body {
   margin: 15px 0;
 }
 
+/*
+ * Home
+ */
+
+.container .jumbotron {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .container .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+
 .jumbotron {
   padding-top: 0;
   background-color: transparent;
+  padding-bottom: 0;
 }
 
 @media (min-width: 768px) {
@@ -73,7 +93,9 @@ body {
   font-style: italic;
 }
 
-/* Timeline */
+/*
+ * Timeline
+ */
 
 .timeline {
   list-style: none;
@@ -251,7 +273,13 @@ body {
   }
 }
 
-/* Spinner */
+/*
+ * Spinner
+ */
+
+#spinner {
+  margin-top: 50px;
+}
 
 .glyphicon-spin {
   -webkit-animation: spin 1000ms infinite linear;
