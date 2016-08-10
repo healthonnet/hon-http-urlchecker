@@ -3,3 +3,14 @@ nav.navbar.navbar-default.navbar-fixed-top
     div.navbar-header
       a(href='../', class='navbar-brand') 
         img(src="images/hon-logo.png", height="30", title="Health On the Net", alt="Health On the Net")
+      button(class='navbar-toggle', type='button', data-toggle='collapse', data-target='#navbar')
+        span.sr-only Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+    div#navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          a(href='../') Home
+        li
+          a(href='../status-code.html') Status Code
