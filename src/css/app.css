@@ -2,6 +2,47 @@ body {
   padding-top: 70px;
 }
 
+/*
+ * Utils
+ */
+
+.centered {
+  text-align: center;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-default {
+  background-image: linear-gradient(to bottom, #f1f6ff 0,#f1f6ff 100%);
+}
+
+.navbar-default .navbar-brand {
+  color: #222;
+}
+
+.navbar-brand {
+  padding: 10px 10px;
+}
+
+.navbar-default .navbar-toggle {
+  border: none;
+}
+
+.navbar-default .navbar-toggle:hover {
+  border: none;
+  background-color: #d5e4ff;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #222;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #222;
+}
+
 .footer {
   bottom: 0;
   width: 100%;
@@ -14,10 +55,6 @@ body {
 
 .footer p {
   margin: 15px 0;
-}
-
-.centered {
-  text-align: center;
 }
 
 .jumbotron {
