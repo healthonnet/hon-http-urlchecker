@@ -3,6 +3,7 @@ build:
   - 'test'
   - 'copy:build'
   - 'jade:build'
+  - 'handlebars:build'
 
 test:
   - 'jshint:all'

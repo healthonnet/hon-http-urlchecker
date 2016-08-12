@@ -4,7 +4,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['**'],
+      src: ['js/**', 'css/**', 'images/**'],
       dest: 'www/',
       nonull: true,
     },{
@@ -29,6 +29,12 @@ module.exports = {
       expand: true,
       cwd: 'bower_components/jquery/dist/',
       src: [ 'jquery.min.js' ],
+      dest: 'www/js/',
+      nonull: true,
+    },{
+      expand: true,
+      cwd: 'bower_components/handlebars/',
+      src: [ 'handlebars.runtime.min.js' ],
       dest: 'www/js/',
       nonull: true,
     },],
