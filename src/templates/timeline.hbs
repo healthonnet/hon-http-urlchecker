@@ -4,9 +4,23 @@
   </div>
   <div class="timeline-panel">
     <div class="timeline-heading">
-      <h4 class="timeline-title text-{{ COLOR }}">{{ TITLE }}</h4>
+      <h4 class="timeline-title text-{{ COLOR }}">{{ STAT }}</h4>
+    </div>
+    <div class="timeline-body">
       {{#if LOCATION}}
         <p>Location: <span class="text-muted break-url">{{ LOCATION }}</span></p>
+      {{/if}}
+      {{#if SERVER}}
+        <p>Server: <span class="text-muted">{{ SERVER }}</span></p>
+      {{/if}}
+      {{#if TYPE}}
+        <p>Content-Type: <span class="text-muted">{{ TYPE }}</span></p>
+      {{/if}}
+      {{#if DATE}}
+        <p>Date: <span class="text-muted">{{ DATE }}</span></p>
+      {{/if}}
+      {{#if TITLE}}
+        <p>Title: <span class="text-muted">{{ TITLE }}</span></p>
       {{/if}}
     </div>
   </div>

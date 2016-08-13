@@ -56,12 +56,25 @@
         params.COLOR = 'danger';
         params.ICON = 'glyphicon-remove';
       }
-      params.TITLE = data[i].protocol + ' ' +
+      params.STAT = data[i].protocol + ' ' +
         data[i].code + ' ' + data[i].message;
       if (data[i].location) {
         params.LOCATION = data[i].location;
       }
-      // Html += '</p></div></div></li>';
+      if (i === data.length - 1) {
+        if (data[i].server) {
+          params.SERVER = data[i].server;
+        }
+        if (data[i]['content-type']) {
+          params.TYPE = data[i]['content-type'];
+        }
+        if (data[i].date) {
+          params.DATE = data[i].date;
+        }
+        if (data[i].title) {
+          params.TITLE = data[i].title;
+        }
+      }
       html += HonHttpStatus.Templates['src/templates/timeline.hbs'](params);
     }
 
@@ -73,10 +86,8 @@
 
   function positionFooter() {
     var footerHeight = $FOOTER.height();
-    var footerTop =
-      ($(window).scrollTop() + $(window).height() - footerHeight) + 'px';
 
-    if (($(document.body).height() + footerHeight) < $(window).height()) {
+    if (($(document.body).height() + footerHeight + 20) < $(window).height()) {
       $FOOTER.css({position: 'absolute'});
     } else {
       $FOOTER.css({position: 'static'});
