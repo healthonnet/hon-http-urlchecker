@@ -258,6 +258,22 @@ body {
   margin-bottom: 0;
 }
 
+@media (max-width : 1199px) {
+  ul.timeline> li> .timeline-panel {
+    width: calc(100% - 515px);
+    width: -moz-calc(100% - 515px);
+    width: -webkit-calc(100% - 515px);
+  }
+}
+
+@media (max-width : 991px) {
+  ul.timeline> li> .timeline-panel {
+    width: calc(100% - 405px);
+    width: -moz-calc(100% - 405px);
+    width: -webkit-calc(100% - 405px);
+  }
+}
+
 @media (max-width: 767px) {
   ul.timeline:before {
     left: 40px;
