@@ -1,0 +1,13 @@
+<li class="{{ TIMELINE }}">
+  <div class="timeline-badge {{ COLOR }}">
+    <i class="glyphicon {{ICON}}"></i>
+  </div>
+  <div class="timeline-panel">
+    <div class="timeline-heading">
+      <h4 class="timeline-title text-{{ COLOR }}">{{ TITLE }}</h4>
+      {{#if LOCATION}}
+        <p>Location: <span class="text-muted break-url">{{ LOCATION }}</span></p>
+      {{/if}}
+    </div>
+  </div>
+</li>

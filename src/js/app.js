@@ -41,27 +41,28 @@
   function onSuccess(data) {
     var html = '';
     for (var i = 0; i < data.length; i++) {
+      var params = {};
       html += '';
       if (data[i].code === 200) {
-        html += '<li class="timeline-inverted"> ' +
-          '<div class="timeline-badge success">' +
-          '<i class="glyphicon glyphicon-ok"></i>';
+        params.TIMELINE = 'timeline-inverted';
+        params.COLOR = 'success';
+        params.ICON = 'glyphicon-ok';
       } else if (data[i].code <= 400 && data[i].code >= 300) {
-        html += '<li><div class="timeline-badge primary">' +
-          '<i class="glyphicon glyphicon-check"></i>';
+        params.TIMELINE = '';
+        params.COLOR = 'primary';
+        params.ICON = 'glyphicon-arrow-down';
       } else {
-        html += '<li><div class="timeline-badge danger">' +
-          '<i class="glyphicon glyphicon-remove"></i>';
+        params.TIMELINE = '';
+        params.COLOR = 'danger';
+        params.ICON = 'glyphicon-remove';
       }
-      html += '</div><div class="timeline-panel">' +
-        '<div class="timeline-heading">' +
-        '<h4 class="timeline-title">' + data[i].protocol + ' ' +
-        data[i].code + ' ' + data[i].message  + '</h4>' +
-        '<p class="text-muted">';
+      params.TITLE = data[i].protocol + ' ' +
+        data[i].code + ' ' + data[i].message;
       if (data[i].location) {
-        html += data[i].location;
+        params.LOCATION = data[i].location;
       }
-      html += '</p></div></div></li>';
+      // Html += '</p></div></div></li>';
+      html += HonHttpStatus.Templates['src/templates/timeline.hbs'](params);
     }
 
     $SPINNER.hide();
