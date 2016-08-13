@@ -68,6 +68,12 @@ body {
   margin: 15px 0;
 }
 
+@media screen and (max-width: 450px) {
+  .full-copyright {
+    display: none;
+  }
+}
+
 /*
  * Home
  */
