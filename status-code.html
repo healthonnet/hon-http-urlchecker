@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>HON Url Checker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Check status code, response headers, redirect location and redirect chain of a HTTP connection.">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header"><a href="../" class="navbar-brand"> <img src="images/hon-logo.png" height="30" title="Health On the Net" alt="Health On the Net"></a>
+          <button type="button" data-toggle="collapse" data-target="#navbar" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="../">Home</a></li>
+            <li><a href="../status-code.html">Status Codes</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="page-header">
+        <h1>Most common HTTP Status Codes</h1>
+      </div>
+      <p class="lead text-justify">
+        This is a list of Hypertext Transfer Protocol (HTTP) response
+        status codes. HTTP response status codes indicate whether a specific HTTP
+        request has been successfully completed. Responses are grouped in five
+        classes: informational responses, successful responses, redirects,
+        client errors, and servers errors.
+      </p>
+      <h2>Successful responses (2xx)</h2>
+      <p class="text-justify">
+        This class of status codes indicates the action requested by the client
+        was received, understood, accepted, and processed successfully.
+      </p>
+      <dl class="status-code">
+        <dt class="text-success">200 OK</dt>
+        <dd>
+          The request has succeeded. The meaning of a success varies depending on
+          the HTTP method:
+          <br />
+          GET: The resource has been fetched and is transmitted in the message
+          body.
+          <br />
+          HEAD: The entity headers are in the message body.
+          <br />
+          POST: The resource describing the result of the action is transmitted
+          in the message body.
+          <br />
+          TRACE: The message body contains the request message as received by
+          the server
+        </dd>
+      </dl>
+      <h2>Redirection messages (3xx)</h2>
+      <p class="text-justify">
+        This class of status code indicates the client must take additional
+        action to complete the request. Many of these status codes are used in
+        URL redirection.
+      </p>
+      <dl class="status-code">
+        <dt class="text-primary">301 Moved Permanently</dt>
+        <dd>
+          This response code means that URI of requested resource has been
+          changed. Probably, new URI would be given in the response.
+        </dd>
+        <dt class="text-primary">302 Found</dt>
+        <dd>
+          This response code means that URI of requested resource has been
+          changed temporarily. New changes in the URI might be made in the future.
+          Therefore, this same URI should be used by the client in future
+          requests.
+        </dd>
+      </dl>
+      <h2>Client error responses (4xx)</h2>
+      <p class="text-justify">
+        The 4xx class of status code is intended for situations in which the
+        client seems to have erred. Except when responding to a HEAD request, the
+        server should include an entity containing an explanation of the error
+        situation, and whether it is a temporary or permanent condition. These
+        status codes are applicable to any request method. User agents should
+        display any included entity to the user.
+      </p>
+      <dl class="status-code">
+        <dt class="text-danger">400 Bad Request</dt>
+        <dd>
+          This response means that server could not understand the request due to
+          invalid syntax.
+        </dd>
+        <dt class="text-danger">401 Unauthorized</dt>
+        <dd>
+          Authentication is needed to get requested response. This is similar to
+          403, but in this case, authentication is possible.
+        </dd>
+        <dt class="text-danger">403 Forbidden</dt>
+        <dd>
+          Client does not have access rights to the content so server is
+          rejecting to give proper response.
+        </dd>
+        <dt class="text-danger">404 Not Found</dt>
+        <dd>
+          Server can not find requested resource. This response code probably is
+          most famous one due to its frequency to occur in web.
+        </dd>
+      </dl>
+      <h2>Server error responses (5xx)</h2>
+      <p class="text-justify">The server failed to fulfill an apparently valid request.</p>
+      <dl class="status-code">
+        <dt class="text-danger">500 Internal Server Error</dt>
+        <dd>The server has encountered a situation it doesn't know how to handle.</dd>
+        <dt class="text-danger">502 Bad Gateway</dt>
+        <dd>
+          This error response means that the server, while working as a gateway
+          to get a response needed to handle the request, got an invalid response.
+        </dd>
+        <dt class="text-danger">503 Service Unavailable</dt>
+        <dd>
+          The server is not ready to handle the request. Common causes are a
+          server that is down for maintenance or that is overloaded.
+        </dd>
+        <dt class="text-danger">504 Gateway Timeout</dt>
+        <dd>
+          This error response is given when the server is acting as a gateway
+          and cannot get a response in time.
+        </dd>
+      </dl>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <p class="text-center">Copyright © 2016 Health On the Net<span class="full-copyright"> Foundation - v0.0.2</span></p>
+      </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/handlebars.runtime.min.js"></script>
+    <script src="templates/all.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
