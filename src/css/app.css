@@ -142,6 +142,10 @@ body {
   position: relative;
 }
 
+.timeline> li:last-child {
+  margin-bottom: 0;
+}
+
 .timeline> li:before, .timeline> li:after {
   content: " ";
   display: table;
