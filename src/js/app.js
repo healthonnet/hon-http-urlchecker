@@ -76,6 +76,9 @@
           if (data[i].title) {
             params.TITLE = data[i].title;
           }
+          if (data[i - 1] && data[i - 1].location) {
+            params.URL = data[i - 1].location;
+          }
         }
         html += HonHttpStatus.Templates['src/templates/timeline.hbs'](params);
       }

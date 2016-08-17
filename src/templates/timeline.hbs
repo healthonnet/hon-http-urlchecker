@@ -22,6 +22,9 @@
       {{#if TITLE}}
         <p>Title: <span class="text-muted">{{ TITLE }}</span></p>
       {{/if}}
+      {{#if URL}}
+        <p>Url: <a target="_blank" class="break-url" href="{{ URL }}">{{ URL }}</a></p>
+      {{/if}}
     </div>
   </div>
 </li>
