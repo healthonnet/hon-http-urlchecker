@@ -2,14 +2,18 @@
   'use strict';
 
   HonHttpStatus.App = {
+
+    // Service Checker Url
     CHECKER_SERVICE: 'https://apikconnect.honservices.org/' +
       '~kconnect/cgi-bin/url-checker-service.cgi',
+
+    // Selector
     $TIMELINE: $('#timeline'),
-    $FORM: $('#form'),
-    $URL: $('#url'),
-    $SPINNER: $('#spinner'),
+    $FORM:     $('#form'),
+    $URL:      $('#url'),
+    $SPINNER:  $('#spinner'),
     $ERRORMSG: $('#errorMessage'),
-    $FOOTER: $('.footer'),
+    $FOOTER:   $('.footer'),
 
     init: function() {
       var self = this;
@@ -25,12 +29,7 @@
     onSubmit: function(event, self) {
       var url = self.$URL.val();
       if (url !== '') {
-        self.$TIMELINE.hide();
-        self.$TIMELINE.html('');
-        self.positionFooter();
-        self.$SPINNER.show();
-        self.$ERRORMSG.hide();
-
+        this.clearUI();
         $.ajax({
           dataType: 'json',
           url: self.CHECKER_SERVICE,
@@ -51,27 +50,14 @@
     onError: function(xhr, status, error, self) {
       self.$ERRORMSG.show();
       self.$SPINNER.hide();
-      self.positionFooter(null, self);
+      self.positionFooter();
     },
 
     onSuccess: function(data, textStatus, jqXHR, self) {
       var html = '';
       for (var i = 0; i < data.length; i++) {
-        var params = {};
+        var params = self.timelineLayout(data[i]);
         html += '';
-        if (data[i].code === 200) {
-          params.TIMELINE = 'timeline-inverted';
-          params.COLOR = 'success';
-          params.ICON = 'glyphicon-ok';
-        } else if (data[i].code <= 400 && data[i].code >= 300) {
-          params.TIMELINE = '';
-          params.COLOR = 'primary';
-          params.ICON = 'glyphicon-arrow-down';
-        } else {
-          params.TIMELINE = '';
-          params.COLOR = 'danger';
-          params.ICON = 'glyphicon-remove';
-        }
         params.STAT = data[i].protocol + ' ' +
           data[i].code + ' ' + data[i].message;
         if (data[i].location) {
@@ -93,11 +79,40 @@
         }
         html += HonHttpStatus.Templates['src/templates/timeline.hbs'](params);
       }
+      this.showTimeline(html);
+    },
 
-      self.$SPINNER.hide();
-      self.$TIMELINE.html(html);
-      self.$TIMELINE.show();
-      self.positionFooter();
+    timelineLayout: function(data) {
+      var params = {};
+      if (data.code === 200) {
+        params.TIMELINE = 'timeline-inverted';
+        params.COLOR = 'success';
+        params.ICON = 'glyphicon-ok';
+      } else if (data.code <= 400 && data.code >= 300) {
+        params.TIMELINE = '';
+        params.COLOR = 'primary';
+        params.ICON = 'glyphicon-arrow-down';
+      } else {
+        params.TIMELINE = '';
+        params.COLOR = 'danger';
+        params.ICON = 'glyphicon-remove';
+      }
+      return params;
+    },
+
+    clearUI: function() {
+      this.$TIMELINE.hide();
+      this.$TIMELINE.html('');
+      this.positionFooter();
+      this.$SPINNER.show();
+      this.$ERRORMSG.hide();
+    },
+
+    showTimeline: function(html) {
+      this.$SPINNER.hide();
+      this.$TIMELINE.html(html);
+      this.$TIMELINE.show();
+      this.positionFooter();
     },
 
     positionFooter: function() {
