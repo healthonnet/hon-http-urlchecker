@@ -106,6 +106,18 @@ body {
   }
 }
 
+@media (min-width: 992px) {
+  .form-inline .form-control {
+    width: 650px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-inline .form-control {
+    width: 850px;
+  }
+}
+
 #errorMessage {
   font-size: 18px;
   font-style: italic;
