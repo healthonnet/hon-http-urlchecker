@@ -51,6 +51,10 @@ body {
   color: #222;
 }
 
+.nav>li:hover {
+  background-color: #d5e4ff;
+}
+
 /*
  * Footer
  */
