@@ -58,8 +58,7 @@
       for (var i = 0; i < data.length; i++) {
         var params = self.timelineLayout(data[i]);
         html += '';
-        params.STAT = data[i].protocol + ' ' +
-          data[i].code + ' ' + data[i].message;
+        params.STAT = self.getTimelineTitle(data[i]);
         if (data[i].location) {
           params.LOCATION = data[i].location;
         }
@@ -83,6 +82,20 @@
         html += HonHttpStatus.Templates['src/templates/timeline.hbs'](params);
       }
       this.showTimeline(html);
+    },
+
+    getTimelineTitle: function(data) {
+      var title = '';
+      if (data.protocol) {
+        title += data.protocol + ' ';
+      }
+      if (data.code) {
+        title += data.code + ' ';
+      }
+      if (data.message) {
+        title += data.message + ' ';
+      }
+      return title;
     },
 
     timelineLayout: function(data) {
