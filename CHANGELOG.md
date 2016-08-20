@@ -1,6 +1,9 @@
 HON-Http-UrlChecker Changelog
 =============================
 
+### v0.0.4 / 2016-08-20
+ - Fix navbar link
+
 ### v0.0.3 / 2016-08-20
  - Refactor app.js
  - Improve design
