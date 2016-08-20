@@ -51,6 +51,10 @@ body {
   color: #222;
 }
 
+.nav>li:hover {
+  background-color: #d5e4ff;
+}
+
 /*
  * Footer
  */
@@ -61,7 +65,7 @@ body {
   height: 50px;
   background-color: #f1f6ff;
   border-top: 1px solid #e7e7e7;
-  color: #777;
+  color: #444;
 }
 
 .footer p {
@@ -99,6 +103,18 @@ body {
 @media (min-width: 768px) {
   .form-inline .form-control {
     width: 450px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-inline .form-control {
+    width: 650px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-inline .form-control {
+    width: 850px;
   }
 }
 

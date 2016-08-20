@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <title>HON Url Checker</title>
+    <title>HON HTTP Status Codes</title>
+    <meta name="description" content="Most common HTTP Status Codes">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Check status code, response headers, redirect location and redirect chain of a HTTP connection.">
+    <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
-        <div class="navbar-header"><a href="../" class="navbar-brand"> <img src="images/hon-logo.png" height="30" title="Health On the Net" alt="Health On the Net"></a>
+        <div class="navbar-header"><a href="../" class="navbar-brand"> <img src="images/hon-logo.png" height="30" width="226" title="Health On the Net" alt="Health On the Net"></a>
           <button type="button" data-toggle="collapse" data-target="#navbar" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
@@ -28,7 +29,7 @@
         <h1>Most common HTTP Status Codes</h1>
       </div>
       <p class="lead text-justify">
-        This is a list of Hypertext Transfer Protocol (HTTP) response
+        This is a list of Hypertext Transfer Protocol (HTTP) response 
         status codes. HTTP response status codes indicate whether a specific HTTP
         request has been successfully completed. Responses are grouped in five
         classes: informational responses, successful responses, redirects,
@@ -45,7 +46,7 @@
           The request has succeeded. The meaning of a success varies depending on
           the HTTP method:
           <br />
-          GET: The resource has been fetched and is transmitted in the message
+          GET: The resource has been fetched and is transmitted in the message 
           body.
           <br />
           HEAD: The entity headers are in the message body.
@@ -132,9 +133,13 @@
     </div>
     <footer class="footer">
       <div class="container">
-        <p class="text-center">Copyright © 2016 Health On the Net<span class="full-copyright"> Foundation - v0.0.2</span></p>
+        <p class="text-center">Copyright © 2016 Health On the Net<span class="full-copyright"> Foundation - v0.0.3</span></p>
       </div>
     </footer>
+    <script>
+      var HonHttpStatus = { };
+      
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/handlebars.runtime.min.js"></script>
