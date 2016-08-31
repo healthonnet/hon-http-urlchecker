@@ -46,6 +46,6 @@ Developer
 License
 -------
 
-Copyright (C) 2016 William Belle
+MIT License
 
-This program is distributed under the MIT (X11) License: http://www.opensource.org/licenses/mit-license.php
+Copyright (c) 2016 William Belle
