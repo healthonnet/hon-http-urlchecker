@@ -49,7 +49,7 @@
     onError: function(xhr, status, error, self) {
       self.$ERRORMSG.show();
       self.$SPINNER.hide();
-      self.positionFooter();
+      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER);
     },
 
     onSuccess: function(data, textStatus, jqXHR, self) {
