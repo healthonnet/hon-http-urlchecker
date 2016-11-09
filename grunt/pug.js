@@ -10,8 +10,8 @@ module.exports = function(grunt, options) {
         },
       },
       files: {
-        'www/index.html': 'src/views/index.jade',
-        'www/status-code.html': 'src/views/status-code.jade',
+        'www/index.html': 'src/views/index.pug',
+        'www/status-code.html': 'src/views/status-code.pug',
       },
     },
   };

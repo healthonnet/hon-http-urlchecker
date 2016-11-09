@@ -2,7 +2,7 @@ build:
   - 'clean'
   - 'test'
   - 'copy:build'
-  - 'jade:build'
+  - 'pug:build'
   - 'handlebars:build'
 
 test:
