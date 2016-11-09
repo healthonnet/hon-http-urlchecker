@@ -1,6 +1,10 @@
 HON-Http-UrlChecker Changelog
 =============================
 
+### v1.0.0 / 2016-11-09
+ - Move from Jade to Pug
+ - Use dependency responsive-sticky-footer-plugin
+
 ### v0.0.4 / 2016-08-20
  - Fix navbar link
 
