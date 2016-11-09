@@ -2,6 +2,7 @@ HON-Http-UrlChecker
 ===================
 
 [![Build Status](https://travis-ci.org/healthonnet/hon-http-urlchecker.svg?branch=master)](https://travis-ci.org/healthonnet/hon-http-urlchecker)
+[![Dependency Status](https://gemnasium.com/badges/github.com/healthonnet/hon-http-urlchecker.svg)](https://gemnasium.com/github.com/healthonnet/hon-http-urlchecker)
 
 Check status code, response headers, redirect location and redirect chain
 of a HTTP connection.
