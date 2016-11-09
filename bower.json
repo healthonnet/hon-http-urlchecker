@@ -23,6 +23,7 @@
   ],
   "dependencies": {
     "bootstrap": "~3.3.7",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "responsive-sticky-footer-plugin": "^0.0.1"
   }
 }

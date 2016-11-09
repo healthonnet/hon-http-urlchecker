@@ -37,6 +37,12 @@ module.exports = {
       src: [ 'handlebars.runtime.min.js' ],
       dest: 'www/js/',
       nonull: true,
+    },{
+      expand: true,
+      cwd: 'bower_components/responsive-sticky-footer-plugin/dist/',
+      src: [ 'jquery.responsiveStickyFooter.min.js' ],
+      dest: 'www/js/',
+      nonull: true,
     },],
   },
 };

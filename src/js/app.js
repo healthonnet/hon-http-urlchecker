@@ -20,9 +20,8 @@
       this.$FORM.submit(function(event) {
         self.onSubmit(event, self);
       });
-      $(window).bind('load', function() {
-        self.positionFooter();
-        $(window).scroll(self.positionFooter).resize(self.positionFooter);
+      $(window).on('load', function() {
+        self.$FOOTER.responsiveStickyFooter();
       });
     },
 
@@ -119,7 +118,7 @@
     clearUI: function() {
       this.$TIMELINE.hide();
       this.$TIMELINE.html('');
-      this.positionFooter();
+      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER);
       this.$SPINNER.show();
       this.$ERRORMSG.hide();
     },
@@ -128,18 +127,9 @@
       this.$SPINNER.hide();
       this.$TIMELINE.html(html);
       this.$TIMELINE.show();
-      this.positionFooter();
+      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER);
     },
 
-    positionFooter: function() {
-      var footerHeight = HonHttpStatus.App.$FOOTER.height();
-      var htmlHeight = $(document.body).height() + footerHeight + 50;
-      if (htmlHeight < $(window).height()) {
-        HonHttpStatus.App.$FOOTER.css({position: 'absolute'});
-      } else {
-        HonHttpStatus.App.$FOOTER.css({position: 'static'});
-      }
-    },
   };
 
   HonHttpStatus.App.init();
