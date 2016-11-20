@@ -43,6 +43,18 @@ module.exports = {
       src: [ 'jquery.responsiveStickyFooter.min.js' ],
       dest: 'www/js/',
       nonull: true,
+    },{
+      expand: true,
+      cwd: 'bower_components/hon-bootstrap-template/dist/',
+      src: [ 'js/hon-bootstrap-template.min.js' ],
+      dest: 'www/',
+      nonull: true,
+    },{
+      expand: true,
+      cwd: 'bower_components/hon-bootstrap-template/dist/',
+      src: [ 'css/hon-bootstrap-template.min.css' ],
+      dest: 'www/',
+      nonull: true,
     },],
   },
 };
