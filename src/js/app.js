@@ -20,9 +20,6 @@
       this.$FORM.submit(function(event) {
         self.onSubmit(event, self);
       });
-      $(window).on('load', function() {
-        self.$FOOTER.responsiveStickyFooter();
-      });
     },
 
     onSubmit: function(event, self) {
@@ -49,7 +46,7 @@
     onError: function(xhr, status, error, self) {
       self.$ERRORMSG.show();
       self.$SPINNER.hide();
-      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER);
+      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER, 50);
     },
 
     onSuccess: function(data, textStatus, jqXHR, self) {
@@ -118,7 +115,7 @@
     clearUI: function() {
       this.$TIMELINE.hide();
       this.$TIMELINE.html('');
-      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER);
+      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER, 50);
       this.$SPINNER.show();
       this.$ERRORMSG.hide();
     },
@@ -127,7 +124,7 @@
       this.$SPINNER.hide();
       this.$TIMELINE.html(html);
       this.$TIMELINE.show();
-      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER);
+      $.fn.responsiveStickyFooter.setFooterPosition(this.$FOOTER, 50);
     },
 
   };
