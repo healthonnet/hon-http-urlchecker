@@ -4,7 +4,7 @@ module.exports = {
     files: [{
       expand: true,
       cwd: 'src/',
-      src: ['js/**', 'css/**', 'images/**'],
+      src: ['js/**', 'css/**'],
       dest: 'www/',
       nonull: true,
     },{
@@ -53,6 +53,12 @@ module.exports = {
       expand: true,
       cwd: 'bower_components/hon-bootstrap-template/dist/',
       src: [ 'css/hon-bootstrap-template.min.css' ],
+      dest: 'www/',
+      nonull: true,
+    },{
+      expand: true,
+      cwd: 'bower_components/hon-bootstrap-template/dist/',
+      src: [ 'images/**' ],
       dest: 'www/',
       nonull: true,
     },],
