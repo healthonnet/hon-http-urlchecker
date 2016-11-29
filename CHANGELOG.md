@@ -1,6 +1,10 @@
 HON-Http-UrlChecker Changelog
 =============================
 
+### v1.0.1 / 2016-11-29
+ - Use dependency hon-bootstrap-template
+ - Clean code
+
 ### v1.0.0 / 2016-11-09
  - Move from Jade to Pug
  - Use dependency responsive-sticky-footer-plugin
